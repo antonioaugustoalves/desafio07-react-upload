@@ -35,8 +35,8 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     async function loadTransactions(): Promise<void> {
-      const response = await api.get('/transactions');
-      const formmatedTransactions = response.data.transactions.map(
+      const response =  await api.get('/transactions');
+      const formmatedTransactions =  response.data.transactions.map(
         (transaction: Transaction) => ({
           ...transaction,
           formattedValue: formatValue(transaction.value),
